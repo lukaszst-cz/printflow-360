@@ -15,4 +15,8 @@ Wszystkie dane są syntetyczne i zanonimizowane. Projekt nie zawiera danych klie
 
 Otwórz `index.html` w przeglądarce. Skoroszyt demonstracyjny jest w katalogu `assets`.
 
+## Działająca prezentacja
+
+[Otwórz PrintFlow 360](https://lukaszst-cz.github.io/printflow-360/)
+
 Projekt jest częścią głównego [portfolio operacyjnego](https://github.com/lukaszst-cz/operations-office-portfolio).
