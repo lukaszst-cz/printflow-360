@@ -1,22 +1,33 @@
 # PrintFlow 360
 
-Publiczne studium procesu Order-to-Cash dla firmy poligraficzno-logistycznej. Projekt pokazuje, jak połączyć ofertowanie, przygotowanie produkcji, trzy zmiany, jakość, logistykę, fakturowanie i raportowanie w jeden czytelny model operacyjny.
+**Problem:** w firmie produkcyjnej zlecenie przechodzi przez ofertowanie, przygotowanie, produkcję, jakość, logistykę i fakturę. Gdy każdy etap żyje w osobnym pliku, trudno kontrolować termin, marżę i odpowiedzialność.
 
-## W środku
+**Rozwiązanie:** demonstracyjny model Order-to-Cash dla poligrafii i logistyki, łączący proces, dane i widok wyników.
 
-- interaktywna strona prezentacyjna i portal PWA,
-- skoroszyt `ZIELONA_MARKA_PrintFlow_360_demo.xlsx` z 44 połączonymi arkuszami,
-- dashboard KPI, RACI, instrukcje działowe oraz materiały QA,
-- opis decyzji projektowych w `CASE_STUDY.md`.
+[Otwórz działające demo](https://lukaszst-cz.github.io/printflow-360/)
 
-Wszystkie dane są syntetyczne i zanonimizowane. Projekt nie zawiera danych klientów, pracowników ani dokumentów źródłowych.
+## Co działa
 
-## Jak zobaczyć projekt
+- portal PWA pokazujący przebieg zlecenia;
+- skoroszyt Excel z 44 połączonymi arkuszami;
+- dashboard KPI oraz role i odpowiedzialności RACI;
+- materiały jakościowe i case study decyzji projektowych.
 
-Otwórz `index.html` w przeglądarce. Skoroszyt demonstracyjny jest w katalogu `assets`.
+## Wartość biznesowa
 
-## Działająca prezentacja
+- jedna ścieżka od oferty do płatności;
+- szybsze zauważenie opóźnień, błędów i wąskich gardeł;
+- czytelniejsze przekazanie odpowiedzialności między działami;
+- raportowanie oparte na tych samych danych operacyjnych.
 
-[Otwórz PrintFlow 360](https://lukaszst-cz.github.io/printflow-360/)
+## Dla kogo
 
-Projekt jest częścią głównego [portfolio operacyjnego](https://github.com/lukaszst-cz/operations-office-portfolio).
+Dla produkcji, druku, logistyki i firm realizujących zlecenia etapami.
+
+## Ważne
+
+Wszystkie dane są syntetyczne i zanonimizowane. Projekt jest demonstracją procesu i nie zawiera danych klientów, pracowników ani dokumentów źródłowych.
+
+## Uruchomienie
+
+Otwórz `index.html` w przeglądarce. Skoroszyt demonstracyjny znajduje się w `assets/`.
