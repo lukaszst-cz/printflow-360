@@ -6,6 +6,14 @@
 
 [Otwórz działające demo](https://lukaszst-cz.github.io/printflow-360/)
 
+## Szybki podgląd
+
+- [Portal PWA](https://lukaszst-cz.github.io/printflow-360/portal/)
+- [Pracownia KPI i kalkulator](https://lukaszst-cz.github.io/printflow-360/pracownia.html)
+- [Case study procesu i RACI](https://lukaszst-cz.github.io/printflow-360/case-study.html)
+- [Jak powstał projekt](https://lukaszst-cz.github.io/printflow-360/jak-powstal-projekt.html)
+- [Pakiet QA portalu](https://github.com/lukaszst-cz/printflow-360/tree/main/portal/qa)
+
 Uzupełniająca aplikacja Python + SQLite z API i testami procesu: https://github.com/lukaszst-cz/printflow-control-center
 
 ## Co działa
@@ -29,6 +37,10 @@ Dla produkcji, druku, logistyki i firm realizujących zlecenia etapami.
 ## Ważne
 
 Wszystkie dane są syntetyczne i zanonimizowane. Projekt jest demonstracją procesu i nie zawiera danych klientów, pracowników ani dokumentów źródłowych.
+
+## Kontrola jakości
+
+GitHub Actions sprawdza składnię JavaScript oraz dwa zestawy QA: stronę główną/narzędzia i portal PWA.
 
 ## Uruchomienie
 
