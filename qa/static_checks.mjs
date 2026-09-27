@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -31,3 +31,38 @@ if (failures.length) {
   process.exit(1);
 }
 console.log("TOOLS QA: PASS (14 checks)");
+
+
+async function walk(dir) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...await walk(full));
+    else files.push(full);
+  }
+  return files;
+}
+
+for (const htmlFile of (await walk(root)).filter((file) => file.endsWith(".html"))) {
+  const html = await readFile(htmlFile, "utf8");
+  for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g)) {
+    const raw = match[1];
+    if (/^(?:https?:|mailto:|tel:|data:|#|javascript:)/.test(raw)) continue;
+    const clean = raw.split(/[?#]/)[0];
+    if (!clean) continue;
+    let target = join(dirname(htmlFile), clean);
+    try {
+      if ((await stat(target)).isDirectory()) target = join(target, "index.html");
+    } catch {}
+    try {
+      const info = await stat(target);
+      if (!info.isFile()) failures.push(`Niedziałający odsyłacz: ${htmlFile.replace(root + "/", "")} -> ${raw}`);
+    } catch {
+      failures.push(`Niedziałający odsyłacz: ${htmlFile.replace(root + "/", "")} -> ${raw}`);
+    }
+  }
+}
+
+check(files["index.html"].includes("https://lukaszst-cz.github.io/printflow-360/"), "Canonical strony głównej nie wskazuje opublikowanego demo.");
+check(files["index.html"].includes("github.com/lukaszst-cz/printflow-control-center"), "Strona główna nie prowadzi do aktualnego repo Control Center.");
