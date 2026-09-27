@@ -25,14 +25,6 @@ check(files["jak-powstal-projekt.html"].includes('href="article.css?v=2"'), "Ark
 check(files["article.css"].includes(".article-shell .article-cta p"), "Brakuje reguły kontrastu tekstu w końcowym panelu artykułu.");
 check(files["article.css"].includes("color:#fff"), "Tekst w końcowym panelu artykułu nie ma białego koloru.");
 
-if (failures.length) {
-  console.error("TOOLS QA: FAIL");
-  failures.forEach((failure) => console.error(`- ${failure}`));
-  process.exit(1);
-}
-console.log("TOOLS QA: PASS (14 checks)");
-
-
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
@@ -66,3 +58,11 @@ for (const htmlFile of (await walk(root)).filter((file) => file.endsWith(".html"
 
 check(files["index.html"].includes("https://lukaszst-cz.github.io/printflow-360/"), "Canonical strony głównej nie wskazuje opublikowanego demo.");
 check(files["index.html"].includes("github.com/lukaszst-cz/printflow-control-center"), "Strona główna nie prowadzi do aktualnego repo Control Center.");
+
+
+if (failures.length) {
+  console.error("TOOLS QA: FAIL");
+  failures.forEach((failure) => console.error(`- ${failure}`));
+  process.exit(1);
+}
+console.log("TOOLS QA: PASS (metadata, pages and local links)");
