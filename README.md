@@ -6,6 +6,8 @@
 
 [Otwórz działające demo](https://lukaszst-cz.github.io/printflow-360/)
 
+Uzupełniająca aplikacja Python + SQLite z API i testami procesu: https://github.com/lukaszst-cz/printflow-control-center
+
 ## Co działa
 
 - portal PWA pokazujący przebieg zlecenia;
